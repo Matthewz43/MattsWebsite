@@ -1,0 +1,13 @@
+
+// rafc to do a code snippet
+
+
+//import React from 'react'
+
+const Alert = () => {
+  return (
+    <div className="alert alert-primary" role="alert">Alert</div>
+  )
+}
+
+export default Alert

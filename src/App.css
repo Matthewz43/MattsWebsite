@@ -1,0 +1,25 @@
+
+
+
+
+@font-face {
+  font-family: 'MyCustomProjectFont'; /* This is the name you'll use in your CSS */
+  src: url('./assets/fonts/Jersey_15/Jersey15-Regular.ttf') format('ttf'); /* Path relative to this CSS file */
+  font-weight: 400; /* Or whatever weight this specific file represents */
+  font-style: normal;
+  font-display: swap; /* Tells the browser how to display text while the font is loading */
+}
+
+
+
+
+
+
+.custom-nav-font {
+  font-family: 'MyCustomProjectFont', sans-serif; /* Use the font name you imported */
+  font-weight: 400; 
+  font-size: 1.1rem; /* Example: make it slightly larger */
+
+}
+
+
