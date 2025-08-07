@@ -3,23 +3,17 @@
 // import Alert from './components/Alert';
 //import ImageButton from './components/ImageButton'
 import ListGroup from "./components/ListGroup";
-import NavBar from "./components/topbar";
+import NavBar from "./components/NavBar";
+import PageLayout from "./components/PageLayout"
 function App() {
-  const propsExample = {
-    items: ["Item 1", "Item 2", "Item 3"],
-    heading: "My items",
-    onSelectItem: (item: string) => console.log(`Selected: ${item}`),
-  };
+  
   return (
     <>
       <div>
         <NavBar />
+        <PageLayout />
       </div>
-      <ListGroup
-        items={propsExample.items}
-        heading={propsExample.heading}
-        onSelectItem={propsExample.onSelectItem}
-      />
+      
     </>
   );
 }
