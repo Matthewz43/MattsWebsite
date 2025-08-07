@@ -1,30 +1,45 @@
 import type { MouseEvent } from "react";
+import { useState } from "react";
 
-import imgIcon from "../assets/cbm.ico"; // Adjust path based on where img_girl.jpg is relative to your component
-
-
+import imgIcon from "../assets/cbm.ico";
 
 interface ButtonInformation {
-  buttonName : string;
+  buttonName: string;
+  hrefContent?: string; // ? mark to make it optional
 }
-function NavBarButton({buttonName}: ButtonInformation) {
+function NavBarButton({ buttonName, hrefContent }: ButtonInformation) {
   let handleClick = (event: MouseEvent) => console.log(event);
-  
-  return ( 
+
+  if (!hrefContent) {
+    hrefContent = "#yessir";
+  }
+  return (
     <li className="nav-item" onClick={handleClick}>
-      <a className="nav-link" href="#contact">
+      <a className="nav-link" href={hrefContent}>
         {buttonName}
       </a>
     </li>
   );
 }
-// Then in your JSX:
+
 function Navbar() {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  // 2. A function to toggle the state
+  const handleNavToggle = () => {
+    setIsNavOpen(!isNavOpen); // tsx doesnt acutally require semicolons WHTATTTT
+  };
+
+  let clickedNavCollapsedToggle = () => {
+    handleNavToggle();
+    console.log("yeah i clicked ts isNavOpen is now:", isNavOpen);
+  };
+
   return (
     // Bootstrap's responsive navigation bar with dark background and shadow
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg">
       <div className="container-fluid">
-        {/* Brand/Logo - Your Name, styled with Bootstrap's font size and weight classes */}
+        
         <img
           src={imgIcon}
           className="rounded me-3" // 'me-2' adds margin-right for spacing
@@ -46,6 +61,7 @@ function Navbar() {
           aria-controls="navbarNav"
           aria-expanded="false"
           aria-label="Toggle navigation"
+          onClick = {handleNavToggle}
         >
           <span className="navbar-toggler-icon"></span>{" "}
           {/* Icon for the toggler */}
@@ -53,10 +69,13 @@ function Navbar() {
 
         {/* Collapsible Navbar Content */}
         {/* This div contains the navigation links and collapses on small screens */}
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div
+          className={`collapse navbar-collapse  `} // ok ig I cant use my own react for some reason
+          id="navbarNav"
+        >
           {/* Navigation Links - ms-auto pushes them to the right on larger screens */}
           <ul className="navbar-nav ms-auto">
-            <NavBarButton buttonName="About" />
+            <NavBarButton buttonName="About" hrefContent="#About" />
             <NavBarButton buttonName="Projects" />
             <NavBarButton buttonName="Contact" />
           </ul>
@@ -66,4 +85,4 @@ function Navbar() {
   );
 }
 
-export default Navbar; // Export the component for use in other files
+export default Navbar;

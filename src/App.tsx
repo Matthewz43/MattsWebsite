@@ -2,13 +2,25 @@
 
 // import Alert from './components/Alert';
 //import ImageButton from './components/ImageButton'
-import NavBar from './components/topbar'
+import ListGroup from "./components/ListGroup";
+import NavBar from "./components/topbar";
 function App() {
-
+  const propsExample = {
+    items: ["Item 1", "Item 2", "Item 3"],
+    heading: "My items",
+    onSelectItem: (item: string) => console.log(`Selected: ${item}`),
+  };
   return (
-    <div>
-      <NavBar />
-    </div>
+    <>
+      <div>
+        <NavBar />
+      </div>
+      <ListGroup
+        items={propsExample.items}
+        heading={propsExample.heading}
+        onSelectItem={propsExample.onSelectItem}
+      />
+    </>
   );
 }
 
