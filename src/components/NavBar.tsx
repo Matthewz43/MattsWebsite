@@ -1,5 +1,6 @@
 import type { MouseEvent } from "react";
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 
 import imgIcon from "../assets/cbm.ico";
 
@@ -14,13 +15,13 @@ function NavBarButton({ buttonName, hrefContent }: ButtonInformation) {
   let handleClick = (event: MouseEvent) => console.log(event);
 
   if (!hrefContent) {
-    hrefContent = "#yessir";
+    hrefContent = "/about";
   }
   return (
     <li className="nav-item" onClick={handleClick}>
-      <a className="nav-link" href={hrefContent}>
+      <Link className="nav-link" to={hrefContent}>
         {buttonName}
-      </a>
+      </Link>
     </li>
   );
 }
@@ -41,7 +42,8 @@ function Navbar() {
 
   return (
     // Bootstrap's responsive navigation bar with dark background and shadow
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top">
+    // before it was bg-dark for boostraps dark i made a custom dark (its just darker (pure black trust)) honestly might use bg-dark mine is too black 
+    <nav className="navbar navbar-expand-lg navbar-dark my-custom-dark shadow-lg fixed-top">
       <div className="container-fluid">
         
         <img
@@ -66,7 +68,7 @@ function Navbar() {
           aria-controls="navbarNav"
           aria-expanded="false"
           aria-label="Toggle navigation"
-          onClick = {handleNavToggle}
+          onClick = {clickedNavCollapsedToggle} // reminder for me to delete ts later
         >
           <span className="navbar-toggler-icon"></span>{" "}
           {/* Icon for the toggler */}
@@ -80,9 +82,9 @@ function Navbar() {
         >
           {/* Navigation Links - ms-auto pushes them to the right on larger screens */}
           <ul className="navbar-nav ms-auto">
-            <NavBarButton buttonName="About" hrefContent="#About" />
-            <NavBarButton buttonName="Projects" hrefContent="#Projects" />
-            <NavBarButton buttonName="Contact" hrefContent="#Contact"/>
+            <NavBarButton buttonName="About" hrefContent="/about" />
+            <NavBarButton buttonName="Projects" hrefContent="/projects" />
+            <NavBarButton buttonName="Contact" hrefContent="/contact"/>
           </ul>
         </div>
       </div>

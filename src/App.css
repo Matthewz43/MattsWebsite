@@ -15,6 +15,12 @@ body {
   background-color: #92a8d1;
 }
 
+.my-custom-dark {
+  color : #000000;
+  background-color: #000000;
+
+}
+
 
 
 .custom-nav-font {
