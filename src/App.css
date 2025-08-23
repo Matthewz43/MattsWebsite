@@ -10,10 +10,10 @@
   font-display: swap; /* Tells the browser how to display text while the font is loading */
 }
 
-
+/*
 body {
   background-color: #92a8d1;
-}
+}*/
 
 .my-custom-dark {
   color : #000000;
