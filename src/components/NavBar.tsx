@@ -88,8 +88,8 @@ function Navbar() {
           </ul>
 
           <ul className="navbar-nav ms-auto">
-            <NavBarButton buttonName="Search" hrefContent="/about" />
-            <NavBarButton buttonName="yes" hrefContent="/projects" />
+            <NavBarButton buttonName="Search" hrefContent="/" />
+            <NavBarButton buttonName="yes" hrefContent="/" />
           </ul>
         </div>
       </div>
