@@ -9,6 +9,8 @@ import ListGroup from "./components/ListGroup";
 import NavBar from "./components/NavBar";
 import PageLayout from "./components/PageLayout"
 import ContactPage from "./components/ContactPage"
+import AboutPage from "./components/AboutPage"
+
 function App() {
 
   return (
@@ -16,11 +18,11 @@ function App() {
       <Router>
         <NavBar />
         <Routes>
-          <Route path="/about" element={<PageLayout pageInformation="About" />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/projects" element={<PageLayout pageInformation = "projects"/>} />
           <Route path="/contact" element={<ContactPage/>} />
           {/* You can add more routes here, including a default home page */}
-          <Route path="/" element={<PageLayout pageInformation = "root ya" />} />
+          <Route path="/" element={<AboutPage />} />
         </Routes>
 
       </Router>

@@ -20,7 +20,9 @@ body {
   background-color: #000000;
 
 }
-
+body {
+  padding-top: 60px; /* This value must match the height of your navbar */
+}
 
 
 .custom-nav-font {

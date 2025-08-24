@@ -15,7 +15,7 @@ function NavBarButton({ buttonName, hrefContent }: ButtonInformation) {
   let handleClick = (event: MouseEvent) => console.log(event);
 
   if (!hrefContent) {
-    hrefContent = "/about";
+    hrefContent = "/about"; // LEAVING THIS HERE BECAUSE HREF CONTENT IS PART OF PAGE
   }
   return (
     <li className="nav-item" onClick={handleClick}>
@@ -81,10 +81,15 @@ function Navbar() {
           id="navbarNav"
         >
           {/* Navigation Links - ms-auto pushes them to the right on larger screens */}
-          <ul className="navbar-nav ms-auto">
+          <ul className="navbar-nav ms-left">
             <NavBarButton buttonName="About" hrefContent="/about" />
             <NavBarButton buttonName="Projects" hrefContent="/projects" />
             <NavBarButton buttonName="Contact" hrefContent="/contact"/>
+          </ul>
+
+          <ul className="navbar-nav ms-auto">
+            <NavBarButton buttonName="Search" hrefContent="/about" />
+            <NavBarButton buttonName="yes" hrefContent="/projects" />
           </ul>
         </div>
       </div>
