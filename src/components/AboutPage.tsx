@@ -23,6 +23,7 @@ const Section: React.FC<SectionProps> = ({ color, children }) => {
         width, which is the most common Bootstrap pattern.
         d-flex justify-content-center
         use this to center it and then add container fluid to "increase size of class"
+        OKAY CHANGE text-center TO SOMEWHERE ELSE IT KINDA RUINS SHIT
       */}
       <div className="bg-warning container text-white text-center">{children}</div>
     </div>
