@@ -55,7 +55,7 @@ function Navbar() {
           alt="Profile Icon"
         />
         <a className="navbar-brand fs-3 fw-bold" href="#">
-          Your Name
+          Matt 
         </a>
 
         {/* Navbar Toggler for small screens */}
