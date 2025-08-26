@@ -19,7 +19,7 @@ function SingleProjectItem({ title, description, githubLink = "fat", otherLink =
     }
     return (
         <>
-            <li className="container bg-secondary m-1 p-2 rounded list-unstyled border border-danger" onMouseOver={handleMouseOver}>
+            <li className="container bg-secondary p-2 my-2 rounded list-unstyled border border-danger" onMouseOver={handleMouseOver}>
                 <div className="d-flex align-items-center">
                     <div className="me-auto p-2  rounded bg-success flex-grow-1">
                         <h5 className="mx-2 fw-bold">{title}</h5>
@@ -83,8 +83,8 @@ function ProjectsContainer() {
 
     return (
         <> {/*remove bg-info later*/}
-            <div className="bg-info container row">
-                <div className="bg-secondary col-lg-4 align-self-center">
+            <div className="bg-info row p-2">
+                <div className="bg-secondary col-lg-4 align-self-center rounded ">
                     <h2>Projects</h2>
                     <p><a className="link-danger link-opacity-100" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
                         View All Projects{' ->'}</a>
@@ -95,6 +95,7 @@ function ProjectsContainer() {
                     <SingleProjectItem
                         {...projExample}
                     />
+                    <AlignedContent {...projExample}/>
                     <p>2 of 2</p>
                     <p>2 of 2</p>
                     <p>2 of 2</p>
