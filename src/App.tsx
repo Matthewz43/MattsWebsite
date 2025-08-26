@@ -2,10 +2,10 @@
 
 // import Alert from './components/Alert';
 //import ImageButton from './components/ImageButton'
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import React from 'react';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
-import ListGroup from "./components/ListGroup";
+// import ListGroup from "./components/ListGroup";
 import NavBar from "./components/NavBar";
 import PageLayout from "./components/PageLayout"
 import ContactPage from "./components/ContactPage"
