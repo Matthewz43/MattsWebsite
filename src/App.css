@@ -20,6 +20,12 @@ body {
   background-color: #000000;
 
 }
+
+
+.my-custom-dark-two {
+  background-color: #1e103d;
+
+}
 body {
   padding-top: 60px; /* This value must match the height of your navbar */
 }

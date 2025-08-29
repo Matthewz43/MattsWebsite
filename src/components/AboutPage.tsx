@@ -1,6 +1,8 @@
 import React from "react";
 import MySummary from "./AboutPage/Biography"
 import ProjectsContainer from "./AboutPage/Projects";
+import ContactSection from "./AboutPage/ContactMe"
+
 
 interface SectionProps {
   color: string;
@@ -25,7 +27,7 @@ const Section: React.FC<SectionProps> = ({ color, children }) => {
         use this to center it and then add container fluid to "increase size of class"
         OKAY CHANGE text-center TO SOMEWHERE ELSE IT KINDA RUINS SHIT
       */}
-      <div className="bg-warning container text-white ">{children}</div>
+      <div className="container text-white ">{children}</div>
     </div>
   );
 };
@@ -58,11 +60,14 @@ const AboutPage = () => {
     <>
       {" "}
       {/* add mt-5 for margin */}
-      <Section color="bg-primary">
+      <Section color="my-custom-dark-two">
         <MySummary></MySummary>
       </Section>
       <Section color="bg-primary">
         <ProjectsContainer />
+      </Section>
+      <Section color = "my-custom-dark-two">
+        <ContactSection></ContactSection>
       </Section>
       <Section color="bg-primary">
         <ExampleItem color="bg-transparent">
