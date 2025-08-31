@@ -3,6 +3,7 @@ import type { MouseEvent } from "react";
 import githubIcon from "../../assets/github-mark.svg";
 import linksvgIcon from "../../assets/link-svg.svg";
 import { redirect } from "react-router-dom";
+import { useState } from "react";
 
 interface ProjectItemDescription {
   title: string;
@@ -17,8 +18,13 @@ function SingleProjectItem({
   githubLink = "github.com",
   otherLink = "soy",
 }: ProjectItemDescription) {
-  function handleMouseOver(event: MouseEvent) {
+
+
+  const [isHovered, setIsHovered] = useState(false);
+
+  function handleMouseOverItem(event: MouseEvent) {
     console.log("Mouseover: ", event);
+
   }
   function redirectToGithub() {
     window.open(githubLink, "_blank", "noopener,noreferrer");
@@ -27,11 +33,15 @@ function SingleProjectItem({
   return (
     <>
       <li
-        className="container bg-secondary p-2 my-2 rounded list-unstyled border border-danger"
-        onMouseOver={handleMouseOver}
+        className={`container my-2 p-2 rounded list-unstyled box2  ${isHovered ? "rotatebox2" : ""}`}
+        
+        onMouseOver={handleMouseOverItem}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
+        <div className = "bg-dark rounded ">
         <div className="d-flex align-items-center">
-          <div className="p-2  rounded bg-success flex-grow-1">
+          <div className="p-2  rounded flex-grow-1">
             <h5 className="mx-2 fw-bold mt-3">{title}</h5>
             <ul className="">
               {description.map((item, index) => (
@@ -42,7 +52,7 @@ function SingleProjectItem({
               ))}
             </ul>
           </div>
-          <div className="p-3 rounded bg-success d-flex flex-column align-items-end">
+          <div className="p-3 rounded d-flex flex-column align-items-end">
             <button
               type="button"
               className="btn btn-primary my-1"
@@ -51,10 +61,11 @@ function SingleProjectItem({
               <img
                 src={githubIcon}
                 alt="Github"
-                className="rounded-circle w-50 "
+                className="rounded-circle  "
               ></img>
             </button>
           </div>
+        </div>
         </div>
       </li>
     </>
@@ -104,7 +115,9 @@ function ProjectsContainer() {
   const projectsToShow = [
     {
       title: "BTD6 AI",
-      description: ["Created a genetic algorith", "chair"],
+      description: ["Developed an AI with a genetic algorithm to learn how to play the game Bloons Tower Defense 6 (BTD6)",
+         "Created a C# mod using DLL injection to interface with the BTD6 game engine, providing real-time gameplay data to the C++ AI for learning and optimization.", 
+          "Optimized a decision-making algorithm, reducing the number of generations needed to beat the game by 50% through refined genetic selection."],
       githubLink: "https://github.com/zycata/BTD6Machina",
       otherLink: "please do above",
     },
@@ -120,7 +133,7 @@ function ProjectsContainer() {
       {" "}
       {/*remove bg-info later*/}
       <div className="bg-info row p-2">
-        <div className="bg-secondary col-lg-2 align-self-center rounded ">
+        <div className="bg-secondary col-lg-2 align-self-center rounded text-center">
           <h2>Projects</h2>
           <p>
             <a
@@ -138,6 +151,7 @@ function ProjectsContainer() {
           ))}
 
           <SingleProjectItem {...projExample} />
+          <div className = "box"> </div>
         </div>
       </div>
     </>

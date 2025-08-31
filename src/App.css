@@ -38,4 +38,57 @@ body {
 
 }
 
+.box {
+  background: #142d4a;
+  height: inherit;
 
+  border-radius: 10px; 
+  position: relative;
+
+
+
+}
+
+
+@property --deg{
+  syntax: '<angle>';
+  inherits: true;
+  initial-value: 0deg;
+
+}
+ 
+
+
+@keyframes autoRotate{
+  to {
+    --deg: 360deg;
+  }
+}
+
+.box2 {
+    background: #142d4a;
+
+  background: conic-gradient(
+    from var(--deg) at center,
+    #00c3ff,
+    #4d0199,
+    #6300c6,
+    #009dcd,
+    
+    #00c3ff
+  );
+
+  
+
+  animation: autoRotate 2s linear infinite;
+  transition: all 0.4s;
+  animation-play-state: paused;
+
+}
+.box2:hover {
+  transform: scale(1.01);
+  
+}
+.rotatebox2 {
+  animation-play-state: running;
+}

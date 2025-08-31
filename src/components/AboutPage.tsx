@@ -71,12 +71,17 @@ const AboutPage = () => {
       </Section>
       <Section color="bg-primary">
         <ExampleItem color="bg-transparent">
+          <div className = "box2">
           <h2 className="fs-2 fw-bold mb-4">Welcome to Section One</h2>
           <p className="fs-5">
             This section's height will grow to fit this paragraph and any other
             content you add. Try adding more text or images to see it expand.
           </p>
+          </div>
         </ExampleItem>
+      </Section>
+      <Section color="bg-primary pb-5">
+        <div className = "box2 " ></div>
       </Section>
     </>
   );

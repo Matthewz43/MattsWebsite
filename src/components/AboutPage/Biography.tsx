@@ -1,7 +1,7 @@
 import avatar from "../../assets/avatar.png"; // The bundler handles this import.
+import AMONGUS from "../../assets/Amogus.mp3";
 
-
-
+import{ useRef } from "react";
 
 function MeIcon() {
   return (
@@ -23,6 +23,24 @@ function MeIcon() {
 }
 
 function BiographyDescription() {
+
+
+  const audioRef = useRef<HTMLAudioElement>(new Audio(AMONGUS));
+
+
+  const playSound = () => {
+    const audio = audioRef.current;
+    audio.currentTime = 0; // restart if already playing
+    audio.play().catch((err) => console.error("Error playing sound:", err));
+  };
+
+  const stopSound = () => {
+    const audio = audioRef.current;
+    audio.pause();
+    audio.currentTime = 0; // reset to start
+  };
+
+
   return (
     <>
       <h3>Column 2</h3>
@@ -30,13 +48,11 @@ function BiographyDescription() {
         This is the content for the second column. When the screen is wider, it will be right next to Column 1. I am artificially making this content longer than it has to be because I am extremely funny and yes, true, I'm just a test. Using a `br` tag is really bad for adding spacing, but this is a test.mp4.
       </p>
       <h4>
-        Some quick buttons below to navigate to part of this page
+        Buttons added because Im really funny
       </h4>
       <div className="display-flex">
-        <button>Soy</button>
-        <button>Soy</button>
-        <button>Soy</button>
-        <button>Soy</button>
+        <button onClick = {playSound}>Play</button>
+        <button onClick = {stopSound}>Stop</button>
       </div>
     </>
   );
