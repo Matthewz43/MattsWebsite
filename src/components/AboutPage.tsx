@@ -63,13 +63,13 @@ const AboutPage = () => {
       <Section color="my-custom-dark-two">
         <MySummary></MySummary>
       </Section>
-      <Section color="bg-primary">
+      <Section color="my-custom-dark-three">
         <ProjectsContainer />
       </Section>
       <Section color = "my-custom-dark-two">
         <ContactSection></ContactSection>
       </Section>
-      <Section color="bg-primary">
+      <Section color="my-custom-dark-three">
         <ExampleItem color="bg-transparent">
           <div className = "box2">
           <h2 className="fs-2 fw-bold mb-4">Welcome to Section One</h2>
@@ -80,9 +80,7 @@ const AboutPage = () => {
           </div>
         </ExampleItem>
       </Section>
-      <Section color="bg-primary pb-5">
-        <div className = "box2 " ></div>
-      </Section>
+
     </>
   );
 };

@@ -14,9 +14,9 @@ function MeIcon() {
         ></img>
       </div>
 
-      <p>Matthew Zhao</p>
-      <p>University Of British Columbia</p>
-      <p>Icons</p>
+      <p className = "fs-5">Matthew Zhao</p>
+      <p className = "fs-5">University Of British Columbia</p>
+      <p className = "fs-5"> Icons</p>
       <p>LinkedIn Github, Instagram</p>
     </div>
   );
@@ -43,9 +43,13 @@ function BiographyDescription() {
 
   return (
     <>
-      <h3>Column 2</h3>
-      <p>
-        This is the content for the second column. When the screen is wider, it will be right next to Column 1. I am artificially making this content longer than it has to be because I am extremely funny and yes, true, I'm just a test. Using a `br` tag is really bad for adding spacing, but this is a test.mp4.
+      <h3 className = "fs-2" >Biography</h3>
+      <p className = "fs-4 fw-normal">
+        I'm currently an undergraduate student studying computer science (BsC) at the University of British Columbia. My interests in this field include machine learning, robotics, game design and fullstack development. 
+      </p>
+
+      <p className = "fs-4 fw-normal">
+        Outside of tech, I'm a huge fan of the <strong>Cyberpunk 2077</strong> series by Mike Pondsmith (Yes I'm super excited for EdgeRunners 2). I'm also currently trying to get better at distance running. 
       </p>
       <h4>
         Buttons added because Im really funny
