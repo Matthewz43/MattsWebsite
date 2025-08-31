@@ -33,7 +33,7 @@ function ContactPage() {
             <h1 className = "text-center">Hey yall</h1>
         </section>
         <div>
-
+        <PasswordGame/>
         </div>
         </>)
 }

@@ -2,7 +2,6 @@
 import type { MouseEvent } from "react";
 import githubIcon from "../../assets/github-mark.svg";
 import linksvgIcon from "../../assets/link-svg.svg";
-import { redirect } from "react-router-dom";
 import { useState } from "react";
 
 interface ProjectItemDescription {
@@ -12,29 +11,29 @@ interface ProjectItemDescription {
   otherLink: string;
 }
 
-function ButtonIcon({redirectedLink = ""}) {
+function ButtonIcon({redirectedLink = "", renderedIcon = githubIcon}) {
 
   if (redirectedLink === "") {
     return null
   }
-  function redirectToGithub() {
+  function redirectedToLink() {
     window.open(redirectedLink, "_blank", "noopener,noreferrer");
   }
 
   return (
-    <div className="p-3 rounded d-flex flex-column align-items-end ">
+    
       <button
         type="button"
         className="btn btn-primary my-1 "
-        onClick={redirectToGithub}
+        onClick={redirectedToLink}
       >
         <img
-          src={githubIcon}
+          src={renderedIcon}
           alt="Github"
           className="rounded-circle responsive-image"
         ></img>
       </button>
-    </div>
+
   );
 }
 
@@ -49,10 +48,6 @@ function SingleProjectItem({
   function handleMouseOverItem(event: MouseEvent) {
     console.log("Mouseover: ", event);
   }
-  function redirectToGithub() {
-    window.open(githubLink, "_blank", "noopener,noreferrer");
-  }
-
   return (
     <>
       <li
@@ -77,7 +72,12 @@ function SingleProjectItem({
               </ul>
             </div>
 
-            <ButtonIcon redirectedLink = {githubLink}/>
+                <div className="p-3 rounded d-flex flex-column align-items-end ">
+                  <ButtonIcon redirectedLink = {githubLink} renderedIcon={githubIcon}/>
+                  <ButtonIcon redirectedLink = {otherLink} renderedIcon = {linksvgIcon} />
+                </div>
+            
+            
           </div>
         </div>
       </li>
@@ -119,7 +119,7 @@ function ProjectsContainer() {
         "Optimized a decision-making algorithm, reducing the number of generations needed to beat the game by 50% through refined genetic selection.",
       ],
       githubLink: "https://github.com/zycata/BTD6Machina",
-      otherLink: "please do above",
+      otherLink: "",
     },
     {
       title: "Vendorly Hackathon Project",
@@ -128,7 +128,7 @@ function ProjectsContainer() {
         "Created the backend with Python and FastAPI, handling API requests and managing a MySQL database for business data.",
       ],
       githubLink: "https://github.com/fanxiaotuGod/vendorly",
-      otherLink: "please do above",
+      otherLink: "https://www.google.com/search?q=Mineral+Craft+Funny",
     },
     {
       title: "Vendorly Hackathon Project",
@@ -137,7 +137,7 @@ function ProjectsContainer() {
         "Created the backend with Python and FastAPI, handling API requests and managing a MySQL database for business data.",
       ],
       githubLink: "",
-      otherLink: "please do above",
+      otherLink: "",
     },
   ];
   return (
