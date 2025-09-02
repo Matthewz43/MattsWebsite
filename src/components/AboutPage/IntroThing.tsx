@@ -3,7 +3,7 @@
 
 
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect , useRef} from 'react';
 
 // Assuming characters and getRandomChar are defined somewhere accessible,
 // for this example, they are inside the component.
@@ -17,7 +17,7 @@ function IntroThing() {
 
     // 1. Create a state variable to hold the random text
     const [randomText, setRandomText] = useState(getRandomText());
-
+    const myElementRef = useRef<HTMLDivElement>(null); 
     // Define the function that generates the long string
     function getRandomText() {
         let randomString = "";
@@ -36,21 +36,24 @@ function IntroThing() {
             setRandomText(getRandomText());
         };
 
+        const element = myElementRef.current;
         // 4. Add the event listener to the document
-        document.addEventListener('mousemove', handleMouseMove);
-
+        if (element) {
+            element.addEventListener('mousemove', handleMouseMove);
+        }
         // 5. Return a cleanup function
         // This function runs when the component unmounts,
         // preventing memory leaks by removing the listener.
         return () => {
-            document.removeEventListener('mousemove', handleMouseMove);
+            element?.removeEventListener('mousemove', handleMouseMove);
         };
     }, []); // The empty dependency array [] ensures this effect runs only once on component mount
 
     return (
-        <section id="intro" className="container bg-warning text-break introbox">
+        <section ref ={myElementRef} id="intro" className="container bg-warning text-break introbox">
             {/* 6. Render the state variable */}
-            {randomText}
+            <p className = "card-letters">{randomText}</p>
+
         </section>
     );
 }

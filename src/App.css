@@ -133,3 +133,12 @@ body {
   height: 50vh;
   width: auto;
 }
+
+.card-letters {
+  opacity:0;
+  transition: opacity 0.3s ease;
+}
+
+.introbox:hover .card-letters {
+    opacity: 1;
+}
