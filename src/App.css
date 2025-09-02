@@ -1,4 +1,18 @@
+:root {
+  --navbar-padding : 65px;
+}
 
+
+
+body {
+  padding-top: var(--navbar-padding); /* This value must match the height of your navbar */
+}
+
+/* for scrolling stuff soon*/
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--navbar-padding, 56px);
+}
 
 
 
@@ -29,9 +43,6 @@ body {
 
 .my-custom-dark-three {
   background-color: #150b2c;
-}
-body {
-  padding-top: 60px; /* This value must match the height of your navbar */
 }
 
 
