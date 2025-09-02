@@ -65,7 +65,7 @@ function BiographyDescription() {
 function MySummary() {
   return (
     // change to bg-transparent after testing bs is
-    <div className={`bg-success row align-items-center pt-5 pb-3 text-center intro-animation`}>
+    <div className={` row align-items-center pt-5 pb-3 text-center intro-animation`}>
       <div className="col-12 col-lg-5">
         <MeIcon></MeIcon>
       </div>

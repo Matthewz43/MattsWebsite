@@ -24,7 +24,7 @@ function ButtonIcon({redirectedLink = "", renderedIcon = githubIcon}) {
     
       <button
         type="button"
-        className="btn btn-primary my-1 "
+        className="btn btn-primary my-1 ms-1 "
         onClick={redirectedToLink}
       >
         <img
@@ -59,9 +59,16 @@ function SingleProjectItem({
         onMouseLeave={() => setIsHovered(false)}
       >
         <div className="bg-dark rounded ">
-          <div className="d-flex align-items-center">
+          <div className="d-flex flex-column align-items-start">
+            <div className = "d-flex  container"> 
+              <div className = "ms-4  flex-grow-1"><h5 className="fw-bold mt-3">{title}</h5></div>
+                
+                <ButtonIcon redirectedLink = {githubLink} renderedIcon={githubIcon}/>
+                <ButtonIcon redirectedLink = {otherLink} renderedIcon = {linksvgIcon} />
+              </div>
+
             <div className="p-2  rounded flex-grow-1">
-              <h5 className="mx-2 fw-bold mt-3">{title}</h5>
+
               <ul className="">
                 {description.map((item, index) => (
                   <li className="" key={index}>
@@ -72,10 +79,8 @@ function SingleProjectItem({
               </ul>
             </div>
 
-                <div className="p-3 rounded d-flex flex-column align-items-end ">
-                  <ButtonIcon redirectedLink = {githubLink} renderedIcon={githubIcon}/>
-                  <ButtonIcon redirectedLink = {otherLink} renderedIcon = {linksvgIcon} />
-                </div>
+
+                
             
             
           </div>
@@ -144,7 +149,7 @@ function ProjectsContainer() {
     <>
       {" "}
       {/*remove bg-info later*/}
-      <div className=" row p-2" id={sectionSubject}>
+      <div className=" row p-2 " id={sectionSubject}>
         <div className="bg-secondary col-lg-2 align-self-center rounded text-center py-3">
           <h2>{sectionSubject}</h2>
           <p>

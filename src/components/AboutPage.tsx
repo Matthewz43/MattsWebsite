@@ -2,6 +2,7 @@ import React from "react";
 import MySummary from "./AboutPage/Biography"
 import ProjectsContainer from "./AboutPage/Projects";
 import ContactSection from "./AboutPage/ContactMe"
+import IntroThing from "./AboutPage/IntroThing"
 
 
 interface SectionProps {
@@ -60,6 +61,9 @@ const AboutPage = () => {
     <>
       {" "}
       {/* add mt-5 for margin */}
+      <Section color="my-custom-dark-three">
+        <IntroThing/>
+      </Section>
       <Section color="my-custom-dark-two">
         <MySummary></MySummary>
       </Section>
