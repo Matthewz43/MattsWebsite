@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './App.css'
 import './styles/book.css'
+import './styles/holocard.css'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
