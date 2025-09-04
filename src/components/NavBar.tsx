@@ -43,7 +43,7 @@ function Navbar() {
   return (
     // Bootstrap's responsive navigation bar with dark background and shadow
     // before it was bg-dark for boostraps dark i made a custom dark (its just darker (pure black trust)) honestly might use bg-dark mine is too black 
-    <nav className="navbar navbar-expand-lg navbar-dark my-custom-dark shadow-lg fixed-top">
+    <nav className="navbar navbar-expand-lg navbar-dark my-custom-dark shadow-lg sticky-top">
       <div className="container-fluid">
         
         <img

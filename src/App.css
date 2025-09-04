@@ -3,10 +3,10 @@
 }
 
 
-
+/*
 body {
-  padding-top: var(--navbar-padding); /* This value must match the height of your navbar */
-}
+  /*padding-top: var(--navbar-padding); /* This value must match the height of your navbar just kidding guys sticky top OP
+}*/
 
 /* for scrolling stuff soon*/
 html {
@@ -153,3 +153,5 @@ body {
 .introbox:hover .card-letters {
     opacity: 1;
 }
+
+
