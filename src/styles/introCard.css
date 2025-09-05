@@ -7,10 +7,10 @@
   --hyperplexed-main-light-rgb: 56 182 255;
   --hyperplexed-secondary-rgb: 42 252 152;
   --card-size: 480px;
-  --card-size: 75vmin;
+  --card-size: 100vmin;
   --font-size: 0.8rem;
   --logo-size: calc(var(--card-size) * 0.3);
-  --fuckass-aspect-ratio: 2;
+  --fuckass-aspect-ratio: 1;
 }
 
 .interactive-card-container {
@@ -48,7 +48,7 @@
   justify-content: center;
   aspect-ratio: var(--fuckass-aspect-ratio);
   position: relative;
-  margin: 1rem;
+  /*margin: 1rem;*/
   border-radius: 2rem;
   overflow: hidden;
   cursor: pointer;

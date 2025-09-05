@@ -60,6 +60,13 @@ const AboutPage = () => {
     <>
       {" "}
       {/* add mt-5 for margin */}
+      <div id="app">
+  <div id="star-container">
+    <div id="star-pattern"></div>
+    
+    <div id="star-gradient-overlay"><InteractiveCard/></div>
+  </div>
+</div>
       <Section color="my-custom-dark-three">
           <InteractiveCard/>
       </Section>
