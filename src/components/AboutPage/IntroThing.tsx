@@ -53,6 +53,7 @@ function IntroThing() {
         <section ref ={myElementRef} id="intro" className="container bg-warning text-break introbox">
             {/* 6. Render the state variable */}
             <p className = "card-letters">{randomText}</p>
+            <div className = "container"> This should be on top of an element</div>
 
         </section>
     );

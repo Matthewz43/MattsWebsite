@@ -2,8 +2,7 @@ import React from "react";
 import MySummary from "./AboutPage/Biography"
 import ProjectsContainer from "./AboutPage/Projects";
 import ContactSection from "./AboutPage/ContactMe"
-import IntroThing from "./AboutPage/IntroThing"
-
+import InteractiveCard from "./AboutPage/interactive-card-react";
 
 interface SectionProps {
   color: string;
@@ -48,7 +47,7 @@ const ExampleItem: React.FC<SectionProps> = ({ color, children }) => {
         The Bootstrap "container" class is used here to constrain the inner content's
         width, which is the most common Bootstrap pattern.
       */}
-      <div className="container text-white text-center">{children}</div>
+      <section className="container text-white text-center">{children}</section>
     </div>
   );
 };
@@ -62,7 +61,7 @@ const AboutPage = () => {
       {" "}
       {/* add mt-5 for margin */}
       <Section color="my-custom-dark-three">
-        <IntroThing/>
+          <InteractiveCard/>
       </Section>
       <Section color="my-custom-dark-two">
         <MySummary></MySummary>
@@ -70,17 +69,17 @@ const AboutPage = () => {
       <Section color="my-custom-dark-three">
         <ProjectsContainer />
       </Section>
-      <Section color = "my-custom-dark-two">
+      <Section color="my-custom-dark-two">
         <ContactSection></ContactSection>
       </Section>
       <Section color="my-custom-dark-three">
         <ExampleItem color="bg-transparent">
-          <div className = "box2">
-          <h2 className="fs-2 fw-bold mb-4">Welcome to Section One</h2>
-          <p className="fs-5">
-            This section's height will grow to fit this paragraph and any other
-            content you add. Try adding more text or images to see it expand.
-          </p>
+          <div className="box2">
+            <h2 className="fs-2 fw-bold mb-4">Welcome to Section One</h2>
+            <p className="fs-5">
+              This section's height will grow to fit this paragraph and any other
+              content you add. Try adding more text or images to see it expand.
+            </p>
           </div>
         </ExampleItem>
       </Section>

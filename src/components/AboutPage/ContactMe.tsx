@@ -16,9 +16,11 @@ function ContactItem({ SocialMedia, linkToSocial }: ContactInformation) {
   }
   return (
 
-    <div className="hover-underline  mt-3 rounded py-3 btn btn-secondary " onClick = {redirectedToLink}>
+    <div className="hover-underline  mt-3 rounded py-3 btn btn-dark " onClick = {redirectedToLink}>
 
         <h2>{SocialMedia}</h2>
+        
+        
       
     
     </div>
@@ -33,6 +35,11 @@ function ContactSection() {
 
   const exampleMedia = {
     SocialMedia: "SilkSongingIt",
+    linkToSocial: "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/",
+  }
+
+  const emailAddress = {
+    SocialMedia: "Email",
     linkToSocial: "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/",
   }
 
