@@ -2,14 +2,20 @@ import React from "react";
 import MySummary from "./AboutPage/Biography"
 import ProjectsContainer from "./AboutPage/Projects";
 import ContactSection from "./AboutPage/ContactMe"
-import InteractiveCard from "./AboutPage/interactive-card-react";
+import Navbar from "./NavBar";
+
+
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+
 
 interface SectionProps {
   color: string;
   children: React.ReactNode;
+  sectionType?: string;
 }
 
-const Section: React.FC<SectionProps> = ({ color, children }) => {
+const Section: React.FC<SectionProps> = ({ color, children, sectionType}: SectionProps) => {
   // Bootstrap equivalents:
   // d-flex: display: flex
   // align-items-center: align-items: center
@@ -17,8 +23,9 @@ const Section: React.FC<SectionProps> = ({ color, children }) => {
   // p-5: padding: 3rem (or 48px)
   // The width wraps to its parent by default.
   return (
-    <div
+    <section
       className={`${color} container-fluid `}
+      id = {sectionType}
     >
       {/*
         The Bootstrap "container" class is used here to constrain the inner content's
@@ -28,7 +35,7 @@ const Section: React.FC<SectionProps> = ({ color, children }) => {
         OKAY CHANGE text-center TO SOMEWHERE ELSE IT KINDA RUINS SHIT
       */}
       <div className="container text-white ">{children}</div>
-    </div>
+    </section>
   );
 };
 
@@ -56,36 +63,48 @@ const ExampleItem: React.FC<SectionProps> = ({ color, children }) => {
 
 
 const AboutPage = () => {
+
+  const location = useLocation();
+
+  useEffect(() => {
+    // Check if the URL has a hash (e.g., #Projects)
+    if (location.hash) {
+      // Find the element with a matching ID (e.g., "Projects")
+      const element = document.getElementById(location.hash.substring(1));
+
+      // If the element is found, scroll to it smoothly
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
   return (
     <>
       {" "}
       {/* add mt-5 for margin */}
       <div id="app">
-  <div id="star-container">
-    <div id="star-pattern"></div>
-    
-    <div id="star-gradient-overlay"><InteractiveCard/></div>
-  </div>
-</div>
-      <Section color="my-custom-dark-three">
-          <InteractiveCard/>
-      </Section>
-      <Section color="my-custom-dark-two">
+        <div id="star-container">
+          <div id="star-pattern"></div>
+
+          <div id="star-gradient-overlay"></div>
+        </div>
+      </div>
+      <Navbar />
+      <Section color="my-custom-dark-two" sectionType = "About">
         <MySummary></MySummary>
       </Section>
-      <Section color="my-custom-dark-three">
+      <Section color="my-custom-dark-three" sectionType = "Projects">
         <ProjectsContainer />
       </Section>
-      <Section color="my-custom-dark-two">
+      <Section color="my-custom-dark-two" sectionType = "Contact">
         <ContactSection></ContactSection>
       </Section>
-      <Section color="my-custom-dark-three">
+      <Section color="my-custom-dark-three" sectionType = "Footer-Section">
         <ExampleItem color="bg-transparent">
           <div className="box2">
-            <h2 className="fs-2 fw-bold mb-4">Welcome to Section One</h2>
+            <h2 className="fs-2 fw-bold mb-4">Land Acknowledgements</h2>
             <p className="fs-5">
-              This section's height will grow to fit this paragraph and any other
-              content you add. Try adding more text or images to see it expand.
+              I work, live on the unceded territories of the Musqueam first nations.
             </p>
           </div>
         </ExampleItem>

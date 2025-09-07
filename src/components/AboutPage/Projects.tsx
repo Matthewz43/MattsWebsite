@@ -11,7 +11,7 @@ interface ProjectItemDescription {
   otherLink: string;
 }
 
-function ButtonIcon({redirectedLink = "", renderedIcon = githubIcon}) {
+function ButtonIcon({ redirectedLink = "", renderedIcon = githubIcon }) {
 
   if (redirectedLink === "") {
     return null
@@ -21,18 +21,18 @@ function ButtonIcon({redirectedLink = "", renderedIcon = githubIcon}) {
   }
 
   return (
-    
-      <button
-        type="button"
-        className="btn btn-primary my-1 ms-1 "
-        onClick={redirectedToLink}
-      >
-        <img
-          src={renderedIcon}
-          alt="Github"
-          className="rounded-circle responsive-image"
-        ></img>
-      </button>
+
+    <button
+      type="button"
+      className="btn btn-primary my-1 ms-1 "
+      onClick={redirectedToLink}
+    >
+      <img
+        src={renderedIcon}
+        alt="Github"
+        className="rounded-circle responsive-image"
+      ></img>
+    </button>
 
   );
 }
@@ -51,24 +51,22 @@ function SingleProjectItem({
   return (
     <>
       <li
-        className={`container my-2 p-2 rounded list-unstyled box2  ${
-          isHovered ? "rotatebox2" : ""
-        }`}
+        className={`container my-2 p-2 rounded list-unstyled box2  ${isHovered ? "rotatebox2" : ""
+          }`}
         onMouseOver={handleMouseOverItem}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
         <div className="bg-dark rounded ">
           <div className="d-flex flex-column align-items-start">
-            <div className = "d-flex  container"> 
-              <div className = "ms-4  flex-grow-1"><h5 className="fw-bold mt-3">{title}</h5></div>
-                
-                <ButtonIcon redirectedLink = {githubLink} renderedIcon={githubIcon}/>
-                <ButtonIcon redirectedLink = {otherLink} renderedIcon = {linksvgIcon} />
+            <div className="d-flex  container">
+              <div className="ms-4  flex-grow-1"><h5 className="fw-bold mt-3">{title}</h5></div>
+              <div className="d-flex align-items-center">
+                <ButtonIcon redirectedLink={githubLink} renderedIcon={githubIcon} />
+                <ButtonIcon redirectedLink={otherLink} renderedIcon={linksvgIcon} />
               </div>
-
+            </div>
             <div className="p-2  rounded flex-grow-1">
-
               <ul className="">
                 {description.map((item, index) => (
                   <li className="" key={index}>
@@ -78,11 +76,6 @@ function SingleProjectItem({
                 ))}
               </ul>
             </div>
-
-
-                
-            
-            
           </div>
         </div>
       </li>

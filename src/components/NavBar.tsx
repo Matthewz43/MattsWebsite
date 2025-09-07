@@ -1,6 +1,6 @@
 import type { MouseEvent } from "react";
 import { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link , NavLink} from 'react-router-dom';
 
 import imgIcon from "../assets/cbm.ico";
 
@@ -22,6 +22,22 @@ function NavBarButton({ buttonName, hrefContent }: ButtonInformation) {
       <Link className="nav-link" to={hrefContent}>
         {buttonName}
       </Link>
+    </li>
+  );
+}
+
+
+function NavBarButtonSamePage({ buttonName, hrefContent }: ButtonInformation) {
+
+
+  if (!hrefContent) {
+    hrefContent = "/about"; // LEAVING THIS HERE BECAUSE HREF CONTENT IS PART OF PAGE
+  }
+  return (
+    <li className="nav-item">
+      <NavLink className="nav-link" to={hrefContent}>
+        {buttonName}
+      </NavLink>
     </li>
   );
 }
@@ -82,14 +98,17 @@ function Navbar() {
         >
           {/* Navigation Links - ms-auto pushes them to the right on larger screens */}
           <ul className="navbar-nav ms-left">
-            <NavBarButton buttonName="About" hrefContent="/about" />
-            <NavBarButton buttonName="Projects" hrefContent="/projects" />
-            <NavBarButton buttonName="Contact" hrefContent="/contact"/>
+            <NavBarButtonSamePage buttonName="About" hrefContent="#About" />
+            <NavBarButtonSamePage buttonName="Projects" hrefContent="#Projects" />
+            <NavBarButtonSamePage buttonName="Contact" hrefContent="#Contact"/>
+
+
           </ul>
 
           <ul className="navbar-nav ms-auto">
-            <NavBarButton buttonName="Search" hrefContent="/" />
-            <NavBarButton buttonName="yes" hrefContent="/" />
+            <NavBarButton buttonName="A" hrefContent="/about" />
+            <NavBarButton buttonName="P" hrefContent="/projects" />
+            <NavBarButton buttonName="C" hrefContent="/contact"/>
           </ul>
         </div>
       </div>

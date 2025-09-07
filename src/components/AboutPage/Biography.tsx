@@ -16,8 +16,8 @@ function MeIcon() {
 
       <p className = "fs-5">Matthew Zhao</p>
       <p className = "fs-5">University Of British Columbia</p>
-      <p className = "fs-5"> Icons</p>
-      <p>LinkedIn Github, Instagram</p>
+      <p className = "fs-5"> Yep.. that's me</p>
+      
     </div>
   );
 }

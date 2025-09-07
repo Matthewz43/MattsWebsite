@@ -26,7 +26,7 @@ const Section: React.FC<SectionProps> = ({ color, children }) => {
   );
 };
 
-function PageLayout({ pageInformation = "soy" }) {
+function PageLayout() {
   const propsExample = {
     items: ["Item 1", "Item 2", "Item 3"],
     heading: "My items",
@@ -37,7 +37,7 @@ function PageLayout({ pageInformation = "soy" }) {
     <>
       <main className="container-fluid mt-5 pt-3">
         {/* The target for the "About" link */}
-        <section id="About" style={{ minHeight: "100vh" /*, paddingTop: "1px" */}}>
+        <section id="" style={{ minHeight: "100vh" /*, paddingTop: "1px" */}}>
           <Section color="bg-primary">
             <h2 className="fs-2 fw-bold mb-4">Welcome to Section One</h2>
             <p className="fs-5">
@@ -46,7 +46,7 @@ function PageLayout({ pageInformation = "soy" }) {
               expand.
             </p>
           </Section>
-          <h2>{pageInformation}</h2>
+        
           <p>
             This is the content for the "About" section. Clicking the "About"
             button in the navbar will bring you here.

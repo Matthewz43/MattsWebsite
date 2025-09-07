@@ -58,7 +58,7 @@ function ContactSection() {
         <div className="row text-center">
           <div className="col-md-6 d-grid gap-2 ">
             <ContactItem {...linkedIn} />
-            <ContactItem {...exampleMedia} />
+            <ContactItem {...emailAddress} />
           </div>
           <div className="col-md-6 d-grid gap-2 ">
             <ContactItem {...exampleMedia} />
