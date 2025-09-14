@@ -3,7 +3,7 @@ import MySummary from "./AboutPage/Biography"
 import ProjectsContainer from "./AboutPage/Projects";
 import ContactSection from "./AboutPage/ContactMe"
 import Navbar from "./NavBar";
-
+import IntroSection from "./AboutPage/IntroSection"
 
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -82,13 +82,7 @@ const AboutPage = () => {
     <>
       {" "}
       {/* add mt-5 for margin */}
-      <div id="app">
-        <div id="star-container">
-          <div id="star-pattern"></div>
-
-          <div id="star-gradient-overlay"></div>
-        </div>
-      </div>
+      <IntroSection/>
       <Navbar />
       <Section color="my-custom-dark-two" sectionType = "About">
         <MySummary></MySummary>

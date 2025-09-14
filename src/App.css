@@ -14,8 +14,6 @@ html {
   scroll-padding-top: var(--navbar-padding, 56px);
 }
 
-
-
 @font-face {
   font-family: 'MyCustomProjectFont'; /* This is the name you'll use in your CSS */
   src: url('./assets/fonts/Jersey_15/Jersey15-Regular.ttf') format('ttf'); /* Path relative to this CSS file */
@@ -165,11 +163,7 @@ body {
 }
 
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+
 
 @keyframes pan {
   0% {
@@ -220,3 +214,26 @@ body {
   z-index: 2;
 }
 
+.center {
+
+  border: 3px solid green;
+  padding: 10px;
+  height:50%;
+}
+
+.middle-div {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+h1 {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(3rem, 10vw, 10rem);
+  color: white;
+  padding: 0rem clamp(1rem, 2vw, 3rem);
+  border-radius: clamp(0.4rem, 0.75vw, 1rem);
+}
