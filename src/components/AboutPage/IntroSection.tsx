@@ -10,9 +10,15 @@ function wait(ms: number): Promise<void> {
 }
 
 
-function IntroductoryPart() {
+interface itemInformation {
+  contents: string;
+  fontsize: string;
 
-    const STARTERTEXT = "TEXTEXTTEXTTEXT"
+}
+
+function IntroductoryPart({contents, fontsize }: itemInformation) {
+
+    const STARTERTEXT = contents
     // A better implementation of getRandom()
     const getRandom = useCallback(() => {
         const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -30,7 +36,7 @@ function IntroductoryPart() {
 
     function getRandomBasic(curIter: number, curWord: string) {
         // helper function for getiteration, def could have a better way,
-        const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
         // const lowerLetters = 'abcdefghijklmnopqrstuvwxyz'
         let word = curWord.slice(0, curIter);
         for (let i =curIter; i<curWord.length; i++) {
@@ -80,10 +86,17 @@ function IntroductoryPart() {
         };
     }, [getRandom]); // Now the dependency array correctly includes the memoized function
 
+
+    if (fontsize === "h3") {
+        return (
+            <h2  ref={TextRef} id="im the goat"> {randomText}</h2>
+
+    );
+    }
+
     return (
-        <div  className="bg-transparent container text-center center middle-div" style={{ zIndex: 3, position: 'relative' }}>
-            <h1 ref={TextRef} id="im the goat"> {randomText}</h1>
-        </div>
+            <h1 className={`${fontsize} `} ref={TextRef} id="im the goat"> {randomText}</h1>
+
     );
 }
 
@@ -100,8 +113,14 @@ function IntroSection() {
         <div id="star-container">
           <div id="star-pattern"></div>
 
-
-            <IntroductoryPart/>
+            <div  className="bg-transparent container text-center center middle-div" style={{ zIndex: 3}}>
+                <IntroductoryPart contents = "Hi, I'm Matt" fontsize = ''/>
+                <ul>
+                    <IntroductoryPart contents = "soy soy soy" fontsize = 'h3' />
+                </ul>
+                
+            </div>
+            
            
           <div id="star-gradient-overlay"></div>
         </div>
