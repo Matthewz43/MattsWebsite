@@ -146,8 +146,10 @@ function ProjectsContainer() {
         <div className="bg-secondary col-lg-2 align-self-center rounded text-center py-3">
           <h2>{sectionSubject}</h2>
           <p>
+            {/*eventually make this about my github*/}
             <a
               className="link-danger link-opacity-100"
+              
               href="https://creations.mtdv.me/articles/MattsProjects"
               target="_blank"
             >

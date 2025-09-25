@@ -1,5 +1,5 @@
 
-
+import '../../styles/introstars.css'
 
 
 
@@ -50,12 +50,6 @@ function IntroductoryPart({contents, fontsize }: itemInformation) {
         }
         return word;
     }
-
-
-
-    
-
-
     useEffect(() => {
         const getIterationOfWords = async () =>  {
         const DELAY_IN_MS = 67;
@@ -87,15 +81,15 @@ function IntroductoryPart({contents, fontsize }: itemInformation) {
     }, [getRandom]); // Now the dependency array correctly includes the memoized function
 
 
-    if (fontsize === "h3") {
+    if (fontsize === "small") {
         return (
-            <h2  ref={TextRef} id="im the goat"> {randomText}</h2>
+            <h2 className = "sm-glitched-text glitched-text py-2 px-4" ref={TextRef} id="im the goat"> {randomText}</h2>
 
     );
     }
 
     return (
-            <h1 className={`${fontsize} `} ref={TextRef} id="im the goat"> {randomText}</h1>
+            <h1 className={`${fontsize} lg-glitched-text glitched-text mt-4 py-3 px-5`} ref={TextRef} id="im the goat"> {randomText}</h1>
 
     );
 }
@@ -112,12 +106,10 @@ function IntroSection() {
             
         <div id="star-container">
           <div id="star-pattern"></div>
-
-            <div  className="bg-transparent container text-center center middle-div" style={{ zIndex: 3}}>
-                <IntroductoryPart contents = "Hi, I'm Matt" fontsize = ''/>
-                <ul>
-                    <IntroductoryPart contents = "soy soy soy" fontsize = 'h3' />
-                </ul>
+            {"intro-animation is one to remove to get rid of the fuckass intro animation"}
+            <div  className="intro-animation container middle-div text-center px-5 pt-5" style={{ zIndex: 3}}>
+                <IntroductoryPart contents = "Hi, I'm Matthew" fontsize = ''/>
+    
                 
             </div>
             
