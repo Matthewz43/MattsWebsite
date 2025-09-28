@@ -106,8 +106,7 @@ function IntroSection() {
             
         <div id="star-container">
           <div id="star-pattern"></div>
-            {"intro-animation is one to remove to get rid of the fuckass intro animation"}
-            <div  className="intro-animation container middle-div text-center px-5 pt-5" style={{ zIndex: 3}}>
+            <div  className="intro-animation container middle-div" style={{ zIndex: 3}}>
                 <IntroductoryPart contents = "Hi, I'm Matthew" fontsize = ''/>
     
                 

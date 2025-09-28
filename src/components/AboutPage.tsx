@@ -39,25 +39,7 @@ const Section: React.FC<SectionProps> = ({ color, children, sectionType}: Sectio
   );
 };
 
-const ExampleItem: React.FC<SectionProps> = ({ color, children }) => {
-  // Bootstrap equivalents:
-  // d-flex: display: flex
-  // align-items-center: align-items: center
-  // justify-content-center: justify-content: center
-  // p-5: padding: 3rem (or 48px)
-  // The width wraps to its parent by default.
-  return (
-    <div
-      className={`${color} container-fluid d-flex align-items-center justify-content-center p-5`}
-    >
-      {/*
-        The Bootstrap "container" class is used here to constrain the inner content's
-        width, which is the most common Bootstrap pattern.
-      */}
-      <section className="container text-white text-center">{children}</section>
-    </div>
-  );
-};
+
 
 
 
@@ -78,6 +60,7 @@ const AboutPage = () => {
       }
     }
   }, [location]);
+
   return (
     <>
       {" "}
@@ -94,14 +77,14 @@ const AboutPage = () => {
         <ContactSection></ContactSection>
       </Section>
       <Section color="my-custom-dark-three" sectionType = "Footer-Section">
-        <ExampleItem color="bg-transparent">
-          <div className="box2">
+        
+          <div className="text-center py-4">
             <h2 className="fs-2 fw-bold mb-4">Land Acknowledgements</h2>
             <p className="fs-5">
-              I work, live on the unceded territories of the Musqueam first nations.
+              I work, live and study on the unceded territories of the Musqueam first nations.
             </p>
           </div>
-        </ExampleItem>
+        
       </Section>
 
     </>

@@ -43,7 +43,7 @@ function BiographyDescription() {
 
   return (
     <>
-      <h3 className = "fs-2" >Biography</h3>
+      <h3 className = "fs-2 fw-bold" >Biography</h3>
       <p className = "fs-4 fw-normal">
         I'm currently an undergraduate student studying computer science (BsC) at the University of British Columbia. My interests in this field include machine learning, robotics, game design and fullstack development. 
       </p>

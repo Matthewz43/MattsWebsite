@@ -117,7 +117,7 @@ function ProjectsContainer() {
         "Optimized a decision-making algorithm, reducing the number of generations needed to beat the game by 50% through refined genetic selection.",
       ],
       githubLink: "https://github.com/zycata/BTD6Machina",
-      otherLink: "",
+      otherLink: "https://www.youtube.com/watch?v=b4V2-yvDnXA",
     },
     {
       title: "Vendorly Hackathon Project",
@@ -126,7 +126,7 @@ function ProjectsContainer() {
         "Created the backend with Python and FastAPI, handling API requests and managing a MySQL database for business data.",
       ],
       githubLink: "https://github.com/fanxiaotuGod/vendorly",
-      otherLink: "https://www.google.com/search?q=Mineral+Craft+Funny",
+      otherLink: "",
     },
     {
       title: "Vendorly Hackathon Project",
@@ -135,7 +135,7 @@ function ProjectsContainer() {
         "Created the backend with Python and FastAPI, handling API requests and managing a MySQL database for business data.",
       ],
       githubLink: "",
-      otherLink: "",
+      otherLink: "https://www.google.com/search?q=Mineral+Craft+Funny",
     },
   ];
   return (
@@ -144,17 +144,9 @@ function ProjectsContainer() {
       {/*remove bg-info later*/}
       <div className=" row p-2 " id={sectionSubject}>
         <div className="bg-secondary col-lg-2 align-self-center rounded text-center py-3">
-          <h2>{sectionSubject}</h2>
+          <h2 className = "fs-2 fw-bold">{sectionSubject}</h2>
           <p>
-            {/*eventually make this about my github*/}
-            <a
-              className="link-danger link-opacity-100"
-              
-              href="https://creations.mtdv.me/articles/MattsProjects"
-              target="_blank"
-            >
-              View All Projects{" ->"}
-            </a>
+           
           </p>
           <InteractableBook />
         </div>

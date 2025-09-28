@@ -105,7 +105,7 @@ function Navbar() {
 
           </ul>
 
-          <ul className="navbar-nav ms-auto">
+          <ul className="navbar-nav ms-auto d-none">
             <NavBarButton buttonName="A" hrefContent="/about" />
             <NavBarButton buttonName="P" hrefContent="/projects" />
             <NavBarButton buttonName="C" hrefContent="/contact"/>

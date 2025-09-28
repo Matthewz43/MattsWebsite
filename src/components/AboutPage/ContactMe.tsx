@@ -16,19 +16,44 @@ function ContactItem({ SocialMedia, linkToSocial }: ContactInformation) {
   }
   return (
 
-    <div className="hover-underline  mt-3 rounded py-3 btn btn-dark " onClick = {redirectedToLink}>
+    <a className="hover-underline  mt-3 rounded py-3 btn btn-dark border border-dark" onClick={redirectedToLink}>
+      <div className="d-flex flex-row justify-content-center">
         <h2>{SocialMedia}</h2>
-    </div>
+      </div>
+
+
+    </a>
   )
 }
 
 
+function EmailItem({ SocialMedia, linkToSocial }: ContactInformation) {
+
+  function sendEmailToSocial() {
+  // Assuming 'linkToSocial' is a variable that holds the email address, 
+  // e.g., var linkToSocial = "info@example.com";
+  
+  // The 'mailto:' protocol tells the browser to open the default email client.
+  window.open("mailto:" + linkToSocial, "_self");
+}
+  return (
+
+    <a className="hover-underline  mt-3 rounded py-3 btn btn-dark border border-dark" onClick={sendEmailToSocial}>
+      <div className="d-flex flex-row justify-content-center">
+        
+        <h2>{SocialMedia}</h2>
+      </div>
+
+
+    </a>
+  )
+}
 
 function ContactSection() {
 
   const exampleMedia = {
-    SocialMedia: "SilkSongingIt",
-    linkToSocial: "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/",
+    SocialMedia: "Instagram",
+    linkToSocial: "https://www.instagram.com/matthewz43/",
   }
 
   const githubAccount = {
@@ -38,13 +63,15 @@ function ContactSection() {
 
   const emailAddress = {
     SocialMedia: "Email",
-    linkToSocial: "https://store.steampowered.com/app/1030300/Hollow_Knight_Silksong/",
+    linkToSocial: "yanxinmatthewzhao@gmail.com",
   }
 
   const linkedIn = {
     SocialMedia: "LinkedIn",
     linkToSocial: "https://www.linkedin.com/in/matthew-zhao-a746912a1/",
   }
+
+
 
   return (
     <>
@@ -56,7 +83,7 @@ function ContactSection() {
         <div className="row text-center">
           <div className="col-md-6 d-grid gap-2 ">
             <ContactItem {...linkedIn} />
-            <ContactItem {...emailAddress} />
+            <EmailItem {...emailAddress} />
           </div>
           <div className="col-md-6 d-grid gap-2 ">
             <ContactItem {...githubAccount} />
